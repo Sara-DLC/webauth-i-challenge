@@ -7,6 +7,7 @@ const SessionStorage = require('connect-session-knex')(sessions);
 //Routers paths
 const authRouter = require('../auth/auth-router');
 const usersRouter = require('../users/users-router');
+const knex = require('../database/dbConfig');
 
 
 const server = express();
@@ -40,7 +41,6 @@ server.use(sessions(sessionConfig));
 //Endpoints
 server.use('/api/auth', authRouter);
 server.use('/api/users', usersRouter);
-
 
 
 module.exports = server;

@@ -13,7 +13,7 @@ return db('users').select('id', 'username');
 
 function findBy(user) {
 return db('users')
-    .select('id', 'username', 'password')  
+    // .select('id', 'username', 'password')  
     .where(user);
 }
 
@@ -28,7 +28,7 @@ return db('users')
 
 function findById(id) {
 return db('users')
-    .select('id', 'username')
+    // .select('id', 'username')
     .where({ id })
     .first();
 }
