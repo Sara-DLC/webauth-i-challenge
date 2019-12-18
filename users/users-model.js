@@ -8,13 +8,11 @@ module.exports = {
 };
 
 function find() {
-return db('users').select('id', 'username');
+    return db('users').select('id', 'username');
 }
 
 function findBy(user) {
-return db('users')
-    // .select('id', 'username', 'password')  
-    .where(user);
+    return db('users').where(user);
 }
 
 function add(user) {
@@ -27,8 +25,8 @@ return db('users')
 }
 
 function findById(id) {
-return db('users')
-    // .select('id', 'username')
+    return db('users')
     .where({ id })
     .first();
 }
+

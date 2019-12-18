@@ -1,7 +1,7 @@
-module.exports = function restricted(req, res, next) {
-    if(req.session && req.session.user){
+module.exports = (req, res, next) => {
+    if (req.session && req.session.user) {
         next();
     } else {
-        res.status(401).json({ message: 'Please provide valid credentials'}) 
+        res.status(401).json({ message: "Please provide valid credentials" });
     }
 };
